@@ -76,6 +76,37 @@ project; so, that you can commit your changes and push them to [GitHub][4] to
 not lose them. If you do not know how to use Git, follow this [tutorial][5] and
 bookmark this [reference][6].
 
+Stuff added in this fork
+------------------------
+
+There are some things that I added to my own fork, so I'm gonna list them here.
+
+### Solarized colorscheme fix
+
+I found that since the solarized theme colorscheme uses the "bold/bright"
+versions of most colors (except red and magenta), Sorin's prompt doesn't look
+okay. The solution is basically to make sure that the prompt doesn't use the brighter
+versions and instead use the normal ones. To use this workaround, change the
+prompt line in your `~/.zpreztorc`:
+
+```shell
+zstyle ':prezto:module:prompt' theme 'sorin' '' ''
+```
+
+Yes, the two pairs of empty quotes (`'`) are intentional.
+
+Note: As dnlrn [pointed]("https://github.com/sorin-ionescu/prezto/pull/382?source=cc#issuecomment-29160191"),
+if you use urxvt the solution it's actually simpler, put the following in your
+`~/.Xresources`:
+
+    URxvt.intensityStyles: false
+
+Before:
+![sorin-solarized][p.1]
+
+After:
+![sorin-solarized-friendly][p.2]
+
 Resources
 ---------
 
@@ -115,4 +146,7 @@ SOFTWARE.
 [7]: http://www.bash2zsh.com/zsh_refcard/refcard.pdf
 [8]: http://grml.org/zsh/zsh-lovers.html
 [9]: http://www.cygwin.com
+
+[p.1]: https://f.cloud.github.com/assets/275754/101469/4a2e14c2-68cd-11e2-8a23-0ed93b1baf2a.png
+[p.2]: https://f.cloud.github.com/assets/275754/101471/5a3240c8-68cd-11e2-86df-4eb5b761f5ca.png
 
